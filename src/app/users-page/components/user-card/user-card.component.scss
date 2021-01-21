@@ -1,0 +1,51 @@
+@import "mixins";
+@import "variables";
+
+.user-card {
+  text-align: center;
+  width: 216px;
+  margin: 0 50px 50px;
+  &__avatar-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__name {
+    @include font-primary(400, 24px);
+    color: $text-color-primary;
+    margin: 15px 0;
+  }
+  &__content-text {
+    @include font-primary(400, 16px, 24px);
+    color: $text-color-secondary;
+  }
+  &__name,
+  &__link-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__name {
+    white-space: normal;
+  }
+}
+
+.email {
+  position: relative;
+  &__tooltip {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: smaller;
+  }
+  &:hover > &__tooltip {
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

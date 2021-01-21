@@ -1,0 +1,8 @@
+@import "variables";
+@import "mixins";
+
+.title {
+  @include font-primary(400, 50px);
+  color: $text-color-primary;
+  text-align: center;
+}

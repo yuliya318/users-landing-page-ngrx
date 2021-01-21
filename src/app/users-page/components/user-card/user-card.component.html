@@ -1,0 +1,34 @@
+<div class="user-card">
+  <figure class="user-card__avatar">
+    <img
+      class="user-card__avatar-image"
+      [src]="user.photo"
+      [alt]="user.name"
+      (error)="handleImageError($event)"
+      loading="lazy"
+    />
+  </figure>
+  <h4 class="user-card__name">{{ user.name }}</h4>
+  <div class="user-card__content">
+    <p class="user-card__content-text">{{ user.position }}</p>
+    <div class="user-card__content-text email">
+      <p class="user-card__link-wrapper">
+        <a
+          class="user-card__content-link"
+          [href]="'mailto:' + user.email"
+        >
+          {{ user.email }}
+        </a>
+      </p>
+      <span class="email__tooltip">{{ user.email }}</span>
+    </div>
+    <p class="user-card__content-text">
+      <a
+        class="user-card__content-link"
+        href="tel:{{ user.phone }}"
+      >
+        {{ user.phone }}
+      </a>
+    </p>
+  </div>
+</div>

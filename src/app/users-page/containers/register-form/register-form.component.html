@@ -1,0 +1,116 @@
+<section class="register main-container" id="registration">
+  <app-title>Register to get a work</app-title>
+  <app-subtitle>
+    Attention! After successful registration and alert, update the list of users
+    in the block from the top
+  </app-subtitle>
+  <form
+    class="register__form form"
+    [formGroup]="form"
+    novalidate
+    (ngSubmit)="onSubmit()"
+    (submitted)="resetForm()"
+  >
+    <div class="register__form-group">
+      <label class="form__label" for="name">Name</label>
+      <input
+        class="form__text-input"
+        type="text"
+        id="name"
+        placeholder="Your name"
+        formControlName="name"
+      />
+      <div
+        class="form__alert"
+        *ngIf="formControls.name.invalid && formControls.name.touched"
+      >
+        Please, enter valid name
+      </div>
+    </div>
+    <div class="register__form-group">
+      <label class="form__label" for="email">Email</label>
+      <input
+        class="form__text-input"
+        type="text"
+        id="email"
+        placeholder="Your email"
+        formControlName="email"
+      />
+      <div
+        class="form__alert"
+        *ngIf="formControls.email.invalid && formControls.email.touched"
+      >
+        Please, enter valid email
+      </div>
+    </div>
+    <div class="register__form-group">
+      <label class="form__label" for="phone">Phone number</label>
+      <input
+        class="form__text-input"
+        type="text"
+        id="phone"
+        placeholder="+380 XX XXX XX XX"
+        formControlName="phone"
+        mask="+000 00 000 00 00"
+      />
+      <small class="form__info-text" *ngIf="formControls.phone.untouched">
+        Enter a phone number in international format</small
+      >
+      <div
+        class="form__alert"
+        *ngIf="formControls.phone.invalid && formControls.phone.touched"
+      >
+        Please, enter valid phone number in international format
+      </div>
+    </div>
+    <div class="register__form-group form-group">
+      <label class="form__label">Select your position</label>
+
+      <div
+        class="form-group__radio"
+        *ngFor="let position of positionsList$ | async"
+      >
+        <input
+          class="form-group__radio-input"
+          type="radio"
+          [id]="position.id"
+          [value]="position.id"
+          formControlName="position_id"
+        />
+        <label class="form-group__radio-wrapper" [for]="position.id"></label>
+        <label class="form-group__radio-label" [for]="position.id">
+          {{ position.name }}
+        </label>
+      </div>
+    </div>
+
+    <div class="register__form-group form-group__file">
+      <label class="form__label">Photo</label>
+
+      <input
+        class="form-group__file-input"
+        type="file"
+        id="file"
+        accept="image/*"
+        (change)="uploadFile($event)"
+      />
+      <label class="form-group__file-wrapper" for="file">
+        <div class="form-group__file-fake">{{ inputFileText }}</div>
+        <div class="form-group__file-button">Browse</div>
+      </label>
+    </div>
+
+    <div *ngIf="tokenError$ | async" class="form__error">
+      Token is expired. Please try again.
+    </div>
+
+    <div class="register__form-submit">
+      <button class="button" type="submit" [disabled]="isLoading$ | async"
+        [ngClass]="{'disabled': form.invalid}">
+        <span class="button__text">Sign up now</span>
+        <span class="button__spinner load"></span>
+      </button>
+    </div>
+  </form>
+  <app-modal-window *ngIf="activeModal" [message]="successMessage$ | async" (closeModal)=closeModal($event)></app-modal-window>
+</section>

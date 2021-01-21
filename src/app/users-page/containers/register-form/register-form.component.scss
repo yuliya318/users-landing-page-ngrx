@@ -1,0 +1,141 @@
+@import "variables";
+@import "mixins";
+
+.register {
+  padding: 160px 0;
+  &__form {
+    max-width: 470px;
+    margin: 30px auto;
+    @include font-secondary(16px);
+    color: $text-color-primary;
+  }
+  &__form-group {
+    padding-bottom: 10px;
+  }
+  &__form-submit {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+}
+
+.form {
+  &__label,
+  &__text-input {
+    display: block;
+  }
+  &__label {
+    margin: 10px 0;
+  }
+  &__text-input {
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  &__text-input::placeholder {
+    color: #b2b9c0;
+  }
+  &__text-input:focus {
+    border-color: $color-secondary;
+    box-shadow: 0 0 5px $color-secondary-blur;
+    outline: none;
+  }
+  &__info-text,
+  &__alert {
+    @include font-primary(400, 12px);
+    color: #6c757d;
+  }
+  &__alert {
+    color: $color-primary-active;
+    margin-top: 7px;
+  }
+  &__error {
+    @include font-primary(600, 14px);
+    color: $color-primary-active;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.form-group {
+  &__radio-input,
+  &__file-input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  // radio-buttons styles
+  &__radio {
+    margin: 10px 0;
+  }
+  &__radio-wrapper {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+  }
+  &__radio-wrapper:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: -13px;
+    background: url(../../../../assets/images/radio-button.svg) 0 0 no-repeat;
+  }
+  &__radio-input:checked + &__radio-wrapper:before {
+    background: url(../../../../assets/images/radio-button-selected.svg) 0 0
+      no-repeat;
+  }
+  &__radio-label {
+    margin-left: 25px;
+  }
+
+  // input-file styles
+  &__file-wrapper {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+  }
+  &__file-fake {
+    width: 100%;
+    padding: 0 15px;
+    color: #b2b9c0;
+  }
+  &__file-button {
+    width: 83px;
+    background-color: #f8f7f5;
+    color: $text-color-primary;
+    text-align: center;
+    border-left: 1px solid #ced4da;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  &__file-input:active + &__file-wrapper {
+    border-color: $color-secondary;
+    box-shadow: 0 0 5px $color-secondary-blur;
+  }
+}
+
+// input validation-status styles 
+.form__text-input.ng-touched.ng-invalid {
+  border: 1px solid $color-primary-active;
+}
+.form__text-input.ng-touched.ng-invalid:focus {
+  box-shadow: 0 0 5px $color-primary-blur;
+}
+.form__text-input.ng-touched.ng-valid,
+.form-group__file-input.ng-valid + .form-group__file-wrapper {
+  border: 1px solid $color-success;
+}
+.form__text-input.ng-touched.ng-valid:focus,
+.form-group__file-input.ng-valid:focus + .form-group__file-wrapper {
+  box-shadow: 0 0 5px $color-success-blur;
+}

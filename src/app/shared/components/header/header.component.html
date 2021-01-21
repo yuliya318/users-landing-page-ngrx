@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="header__logo">
+        <a class="header__logo-link" [ngxScrollTo]="'#banner'">
+            <svg class="header__logo-img" xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20">
+                <path fill="#1b4a8a" d="M7 0L0 10l7 10h16l7-10-7-10z" />
+                <path fill="#fff" d="M20 16h-2V6h-2V4h6v2h-2zm-8 0h-2V6H8V4h6v2h-2z" />
+            </svg>
+            <span class="header__logo-text">testtask</span>
+        </a>
+    </div>
+    <nav class="header__menu">
+        <ul class="header__menu-list">
+            <li class="header__menu-item">
+                <a class="header__menu-link" [ngxScrollTo]="'about-me'" 
+                [ngxScrollToOffset]="80">About me</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" [ngxScrollTo]="'#banner'">Relationships</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" [ngxScrollTo]="'#banner'">Requirements</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" [ngxScrollTo]="'users'" 
+                [ngxScrollToOffset]="80">Users</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" [ngxScrollTo]="'registration'" 
+                [ngxScrollToOffset]="80">Sign Up</a>
+            </li>
+        </ul>
+    </nav>
+</header>

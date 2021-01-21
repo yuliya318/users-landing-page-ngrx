@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+.subtitle {
+  @include font-primary(400, 16px, 24px);
+  color: $text-color-secondary;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 450px;
+}

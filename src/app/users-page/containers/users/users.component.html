@@ -1,0 +1,21 @@
+<section class="users main-container" id="users">
+  <app-title>Our cheerful users</app-title>
+  <app-subtitle>Attention! Sorting users by registration date</app-subtitle>
+  <div class="users__cards">
+    <app-user-card
+      *ngFor="let user of usersList$ | async; trackBy: trackByFn"
+      [user]="user"
+    >
+    </app-user-card>
+  </div>
+  <div class="users__button" *ngIf="pageCounter !== (totalPagesCount$ | async)">
+    <button 
+      class="button"
+      (click)="getUsersList()"
+      [disabled]="isLoading$ | async"
+      >
+      <span class="button__text">Show more users</span>
+      <span class="button__spinner load"></span>
+    </button>
+  </div>
+</section>

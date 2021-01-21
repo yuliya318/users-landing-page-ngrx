@@ -1,0 +1,79 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+@import "fonts";
+
+.main-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+
+// button styles 
+// .button {
+//   width: 210px;
+//   height: 38px;
+//   border-radius: 4px;
+//   background-color: $color-primary;
+//   color: $text-color-light;
+//   @include font-primary(600, 16px);
+//   border: none;
+//   outline: none;
+//   &:hover {
+//     background-color: $color-primary-active;
+//   }
+//   &:disabled {
+//     background-color: $color-primary-disabled;
+//   }
+// }
+
+.button {
+  width: 210px;
+  height: 38px;
+  border-radius: 4px;
+  background-color: $color-primary;
+  color: $text-color-light;
+  @include font-primary(600, 16px);
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__spinner {
+    display: none;
+    width: 15px;
+    height: 15px;
+    border: 4px solid #fff;
+    border-radius: 100%;
+    border-top: 4px solid transparent;
+  }
+  &:hover {
+    background-color: $color-primary-active;
+  }
+  &:disabled,
+  &.disabled {
+    background-color: $color-primary-disabled;
+  }
+  &:disabled > &__spinner {
+    display: inline-block;
+  }
+  &:disabled > .load {
+    animation: load-animate infinite linear 1s;
+  }
+  &:disabled &__text {
+    display: none;
+  }
+}
+
+@keyframes load-animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

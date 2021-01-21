@@ -1,0 +1,22 @@
+@import "fonts";
+@import "variables";
+
+@mixin font-primary($weight, $size, $line-height: normal) {
+  font-family: "Open Sans";
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin font-secondary($size, $line-height: normal) {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin background-image($url) {
+  background-image: url(#{$url});
+  background-size: cover;
+  background-repeat: no-repeat;
+}

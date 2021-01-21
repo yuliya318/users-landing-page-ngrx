@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+:host {
+  display: block;
+  @include background-image("../assets/images/banner-bg.png");
+}
+.banner {
+  padding: 110px 30px;
+  color: #ffffff;
+  &__content {
+    max-width: 530px;
+  }
+  &__content-title {
+    text-transform: uppercase;
+    @include font-primary(400, 50px, 54px);
+  }
+  &__content-text {
+    @include font-primary(400, 16px, 24px);
+    margin: 40px 0;
+  }
+}
