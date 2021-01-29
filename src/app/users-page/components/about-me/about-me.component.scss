@@ -31,5 +31,8 @@
     &:hover {
       color: $color-primary-active;
     }
+    &:focus {
+      outline: none;
+    }
   }
 }

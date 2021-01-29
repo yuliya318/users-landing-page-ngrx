@@ -3,7 +3,7 @@ import { UsersResponse } from '@users-page/interfaces/users-response.interface';
 
 export const loadUsers = createAction(
   '[Users/API] Load Users',
-  props<{ page: number, count: number }>()
+  props<{ count: number }>()
 );
 export const loadUsersSuccess = createAction(
   '[Users/API] Load Users Success',

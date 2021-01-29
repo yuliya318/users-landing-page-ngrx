@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { Position } from '@users-page/interfaces/position.interface';
 import { select, Store } from '@ngrx/store';
-// import * as PositionsListSelectors from '@users-page/store/selectors/load-positions.selectors';
-// import * as LoadPositionsActions from '@users-page/store/actions/load-positions.actions';
 import * as fromUsers from '@users-page/store';
 import { UsersService } from '@users-page/services/users.service';
 

@@ -8,7 +8,7 @@
     >
     </app-user-card>
   </div>
-  <div class="users__button" *ngIf="pageCounter !== (totalPagesCount$ | async)">
+  <div class="users__button" *ngIf="(pageCounter$ | async) !== (totalPagesCount$ | async)">
     <button 
       class="button"
       (click)="getUsersList()"

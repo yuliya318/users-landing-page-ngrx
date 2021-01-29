@@ -1,20 +1,33 @@
 <section class="about-me main-container" id="about-me">
-    <app-title>Let's get acquainted</app-title>
-    <div class="about-me__content-row">
-        <figure class="about-me__content">
-            <img src="../../../../assets/images/about-me-img.png" alt="about-me" class="about-me__content-image">
-        </figure>
-        <div class="about-me__content">
-            <h3 class="about-me__content-title">I am cool frontend developer</h3>
-            <p class="about-me__content-text">
-                We will evaluate how clean your approach to writing CSS and Javascript
-                code is. You can use any CSS and Javascript 3rd party libraries without any restriction.
-            </p>
-            <p class="about-me__content-text">
-                If 3rd party css/javascript libraries are added to the project via
-                bower/npm/yarn you will get bonus points. If you use any task runner (gulp/webpack) you will get bonus
-                points as well. Slice service directory page P​SD mockup​ into HTML5/CSS3.</p>
-            <button class="about-me__content-button">Sign up now</button>
-        </div>
+  <app-title>Let's get acquainted</app-title>
+  <div class="about-me__content-row">
+    <figure class="about-me__content">
+      <img
+        src="../../../../assets/images/about-me-img.png"
+        alt="about-me"
+        class="about-me__content-image"
+      />
+    </figure>
+    <div class="about-me__content">
+      <h3 class="about-me__content-title">I am cool frontend developer</h3>
+      <p class="about-me__content-text">
+        We will evaluate how clean your approach to writing CSS and Javascript
+        code is. You can use any CSS and Javascript 3rd party libraries without
+        any restriction.
+      </p>
+      <p class="about-me__content-text">
+        If 3rd party css/javascript libraries are added to the project via
+        bower/npm/yarn you will get bonus points. If you use any task runner
+        (gulp/webpack) you will get bonus points as well. Slice service
+        directory page P​SD mockup​ into HTML5/CSS3.
+      </p>
+      <button
+        class="about-me__content-button"
+        [ngxScrollTo]="'registration'"
+        [ngxScrollToOffset]="80"
+      >
+        Sign up now
+      </button>
     </div>
+  </div>
 </section>

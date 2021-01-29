@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutMeComponent } from './about-me.component';
 import { TitleModule } from '@shared/components/title/title.module';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [AboutMeComponent],
   imports: [
     CommonModule,
-    TitleModule
+    TitleModule,
+    ScrollToModule.forRoot()
   ],
   exports: [AboutMeComponent]
 })
