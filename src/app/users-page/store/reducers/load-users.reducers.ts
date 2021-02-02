@@ -37,7 +37,6 @@ export const reducer = createReducer(
     error,
   })),
   on(loadUsersActions.resetUsers, (state) => ({
-    // ...state,
     ...initialState,
   })),
 );

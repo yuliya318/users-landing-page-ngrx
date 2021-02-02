@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import * as loadPositionsActions from '@users-page/store/actions/load-positions.actions';
-// import * as fromUsers from '@users-page/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { UsersService } from '@users-page/services/users.service';

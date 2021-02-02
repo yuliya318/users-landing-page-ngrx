@@ -1,7 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Position } from '@users-page/interfaces/position.interface';
 import * as loadPositionsActions from '@users-page/store/actions/load-positions.actions';
-// import * as fromUsers from '@users-page/store';
 
 export const positionsListFeatureKey = 'positions-list';
 
